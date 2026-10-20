@@ -1,0 +1,43 @@
+# Auto detect text files and perform LF normalization
+* text=auto eol=lf
+
+# Keep Windows scripts CRLF-friendly when checked out on Windows
+*.ps1 text eol=crlf
+*.cmd text eol=crlf
+*.bat text eol=crlf
+
+# C# / project files
+*.cs text diff=csharp
+*.csproj text
+*.sln text
+*.props text
+*.targets text
+*.config text
+*.json text
+*.md text
+*.txt text
+*.rst text
+*.ps text
+
+# Binary fixtures
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.docx binary
+*.doc binary
+*.hwpx binary
+*.hwp binary
+*.odt binary
+*.ods binary
+*.odp binary
+*.xlsx binary
+*.xls binary
+*.pptx binary
+*.ppt binary
+*.dll binary
+*.so binary
+*.dylib binary
+*.nupkg binary
+*.snupkg binary

@@ -1,0 +1,7 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Ghostscript.NET.Examples.RasterizePng</RootNamespace>
+    <AssemblyName>01-RasterizePng</AssemblyName>
+  </PropertyGroup>
+</Project>

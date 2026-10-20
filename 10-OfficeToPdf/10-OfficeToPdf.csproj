@@ -1,0 +1,7 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Ghostscript.NET.Examples.OfficeToPdf</RootNamespace>
+    <AssemblyName>10-OfficeToPdf</AssemblyName>
+  </PropertyGroup>
+</Project>

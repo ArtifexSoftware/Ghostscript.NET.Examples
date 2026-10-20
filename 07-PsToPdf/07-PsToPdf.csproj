@@ -1,0 +1,7 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Ghostscript.NET.Examples.PsToPdf</RootNamespace>
+    <AssemblyName>07-PsToPdf</AssemblyName>
+  </PropertyGroup>
+</Project>

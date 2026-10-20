@@ -1,0 +1,7 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Ghostscript.NET.Examples.CustomDllPath</RootNamespace>
+    <AssemblyName>16-CustomDllPath</AssemblyName>
+  </PropertyGroup>
+</Project>

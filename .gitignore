@@ -1,0 +1,59 @@
+## Build outputs
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+artifacts/
+*.dll
+*.exe
+*.pdb
+*.cache
+project.lock.json
+project.fragment.lock.json
+
+## Example run outputs (keep folder via Output/.gitignore)
+Output/**
+!Output/.gitignore
+
+## Local NuGet drop folder (keep via LocalNuget/.gitignore)
+LocalNuget/**
+!LocalNuget/.gitignore
+
+## Local NuGet overrides (do not commit machine-specific feeds)
+NuGet.Config.local
+nuget.config.user
+
+## IDE / OS
+.vs/
+.idea/
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+*.rsuser
+*.DotSettings.user
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+## Test / logs
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.log
+*.trx
+
+## NuGet
+*.nupkg
+*.snupkg
+**/packages/*
+!**/packages/build/
+
+## Rider / VS Code (optional local)
+*.DotSettings
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json.example

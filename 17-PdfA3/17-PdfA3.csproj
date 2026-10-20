@@ -1,0 +1,7 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Ghostscript.NET.Examples.PdfA3</RootNamespace>
+    <AssemblyName>17-PdfA3</AssemblyName>
+  </PropertyGroup>
+</Project>

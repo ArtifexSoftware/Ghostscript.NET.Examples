@@ -1,0 +1,23 @@
+<Project>
+  <Import Project="$(MSBuildThisFileDirectory)Versions.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <IsPackable>false</IsPackable>
+    <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(OS)' == 'Windows_NT' and '$(MSBuildProjectName)' != 'Examples.Common'">
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(MSBuildProjectName)' != 'Examples.Common'">
+    <PackageReference Include="Ghostscript.NET" Version="$(GhostscriptNetVersion)" />
+    <PackageReference Include="Ghostscript.NativeAssets" Version="$(GhostscriptNativeAssetsVersion)" />
+    <ProjectReference Include="$(MSBuildThisFileDirectory)Common\Examples.Common.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,7 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Ghostscript.NET.Examples.InkCoverage</RootNamespace>
+    <AssemblyName>15-InkCoverage</AssemblyName>
+  </PropertyGroup>
+</Project>

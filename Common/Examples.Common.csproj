@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>Ghostscript.NET.Examples.Common</RootNamespace>
+    <AssemblyName>Examples.Common</AssemblyName>
+  </PropertyGroup>
+</Project>
