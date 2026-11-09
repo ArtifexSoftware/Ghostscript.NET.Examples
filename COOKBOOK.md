@@ -6,8 +6,8 @@ Each recipe has a matching console project in this solution (NuGet-only; no proj
 Requires a Ghostscript native library (`gsdll64.dll` / `libgs.so`), either from `Ghostscript.NativeAssets` or a system install. Office recipes also need GhostPDL (`gpdldll64.dll` / `libgpdl.so`).
 
 ```xml
-<PackageReference Include="Ghostscript.NET" Version="1.3.6" />
-<PackageReference Include="Ghostscript.NativeAssets" Version="10.8.0" />
+<PackageReference Include="Ghostscript.NET" Version="1.3.7" />
+<PackageReference Include="Ghostscript.NativeAssets" Version="10.8.1" />
 ```
 
 Or the convenience package [Ghostscript.NET.Office](https://www.nuget.org/packages/Ghostscript.NET.Office/) (1.0.0), which depends on both of the above. You still call `GhostscriptOffice.Unlock(key)` for the full document.
@@ -24,6 +24,7 @@ Page numbers are **1-based**. Prefer `GhostscriptVersionInfo.GetPreferredVersion
 | Write PNG / JPEG (and other GS devices) to disk | `GhostscriptPngDevice`, `GhostscriptJpegDevice`, `GhostscriptProcessor` |
 | Convert / compress PDF, PS → PDF | `GhostscriptProcessor` (`pdfwrite`) |
 | Office (Word / Excel / PowerPoint / Hangul / …) → PDF | `GhostscriptOffice` (GhostPDL) |
+| Volume-license usage POST | `GhostscriptOffice.Unlock` + `FlushActivity` |
 | Rasterize an Office file | `GhostscriptRasterizer.Open(officePath)` or `GhostscriptProcessor` |
 | Watermark | `GhostscriptProcessor` + PostScript `EndPage` |
 | Print (Windows) | `GhostscriptProcessor` + `mswinpr2` |
@@ -33,7 +34,7 @@ Page numbers are **1-based**. Prefer `GhostscriptVersionInfo.GetPreferredVersion
 | Interactive view (zoom) | `GhostscriptViewer` (see `Ghostscript.NET.Viewer`) |
 | PDF/A-3 + ZUGFeRD / Factur-X | `PDFA3Converter` |
 
-GhostPDL allows **one interpreter instance per process**. Without an Office unlock key, conversion is limited to the first **3 pages**. Set `GHOSTSCRIPT_NET_OFFICE_KEY` (do not hard-code keys).
+GhostPDL allows **one interpreter instance per process**. Without an Office unlock key, conversion is limited to the first **3 pages**. Set `GHOSTSCRIPT_NET_OFFICE_KEY` or a local `Input/office.keys` file (do not hard-code keys or commit the file).
 
 ---
 
@@ -455,7 +456,32 @@ Runnable: `17-PdfA3`. For generating the XML, see also `Ghostscript.NET.PDFA3Con
 
 ---
 
-## 18. Interactive viewer
+## 18. Volume-license Office conversion
+
+Unlock, convert, and read SOPIPE status (`LastFlags`, `LastKeyOk`, `LastDocumentCount`). Volume keys POST usage; call `FlushActivity()` before exit. Put `Name=key` lines in `Input/office.keys` (gitignored) or set `GHOSTSCRIPT_NET_OFFICE_KEY`.
+
+```csharp
+using Ghostscript.NET;
+
+GhostscriptOffice.Unlock(key);
+GhostscriptOffice.ConvertToPdf(@"D:\report.docx", @"D:\report.pdf");
+
+int flags = GhostscriptOffice.LastFlags;
+bool volume = (flags & GhostscriptOffice.KeyFlagVolumeLicense) != 0;
+Console.WriteLine("key_ok: " + GhostscriptOffice.LastKeyOk);
+Console.WriteLine("flags: " + flags);
+Console.WriteLine("product: " + GhostscriptOffice.LastProduct);
+Console.WriteLine("documents: " + GhostscriptOffice.LastDocumentCount);
+
+if (volume && GhostscriptOffice.LastDocumentCount > 0)
+    GhostscriptOffice.FlushActivity();
+```
+
+Runnable: `18-VolumeLicense`. Copy `Input/office.keys.example` to `Input/office.keys` and add keys locally.
+
+---
+
+## 19. Interactive viewer
 
 Use `GhostscriptViewer` (zoom, progressive page updates). Desktop sample: `Ghostscript.NET.Viewer`. Display-device test: `Ghostscript.NET.DisplayTest`.
 
@@ -484,7 +510,8 @@ Customer-facing console apps in this solution (NuGet packages only):
 | 15 | `15-InkCoverage` |
 | 16 | `16-CustomDllPath` |
 | 17 | `17-PdfA3` |
-| 18 | `Ghostscript.NET.Viewer` (WinForms; not a console example) |
+| 18 | `18-VolumeLicense` |
+| 19 | `Ghostscript.NET.Viewer` (WinForms; not a console example) |
 
 ```powershell
 dotnet restore

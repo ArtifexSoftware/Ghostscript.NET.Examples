@@ -27,6 +27,11 @@ LocalNuget/**
 NuGet.Config.local
 nuget.config.user
 
+## Local Office license keys — never commit
+office.keys
+**/office.keys
+
+
 ## IDE / OS
 .vs/
 .idea/

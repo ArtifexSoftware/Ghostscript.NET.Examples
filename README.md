@@ -23,7 +23,7 @@ Package versions are pinned in [`Versions.props`](Versions.props). [`NuGet.Confi
 | `Common/` | Shared paths / console helpers |
 | `Input/` | Fixtures (committed) |
 | `Output/` | Generated files (gitignored) |
-| `01`–`17` | One console recipe each |
+| `01`–`18` | One console recipe each |
 | `LocalNuget/` | Optional local `.nupkg` drop folder |
 | `LICENSE.md` | Artifex Community License |
 | `SECURITY.md` | Vulnerability reporting |
@@ -31,8 +31,9 @@ Package versions are pinned in [`Versions.props`](Versions.props). [`NuGet.Confi
 ## Prerequisites
 
 - .NET 8 SDK (Windows or Linux x64)
-- Packages from [nuget.org](https://www.nuget.org/) (see `Versions.props`): `Ghostscript.NET` 1.3.6 and `Ghostscript.NativeAssets` 10.8.0
+- Packages from [nuget.org](https://www.nuget.org/) (see `Versions.props`): `Ghostscript.NET` 1.3.7 and `Ghostscript.NativeAssets` 10.8.1
 - Optional `GHOSTSCRIPT_NET_OFFICE_KEY` for full Office documents (without it, GhostPDL converts the first 3 pages)
+- Optional `Input/office.keys` (gitignored; see `Input/office.keys.example`) for `18-VolumeLicense`
 - Optional `GHOSTSCRIPT_NET_RUN_PRINTER=1` to run `11-Print`
 - The convenience package [Ghostscript.NET.Office](https://www.nuget.org/packages/Ghostscript.NET.Office/) 1.0.0 pulls Ghostscript.NET + NativeAssets
 
@@ -59,6 +60,7 @@ Do not commit license keys.
 | `15-InkCoverage` | CMYK ink coverage |
 | `16-CustomDllPath` | Explicit `gsdll` path |
 | `17-PdfA3` | PDF/A-3 + Factur-X / ZUGFeRD XML |
+| `18-VolumeLicense` | Office unlock keys, SOPIPE flags, volume-usage POST |
 
 Inputs: `Input/` (`sample.pdf`, `sample.ps`, `sample.docx`, `watermark.pdf`, `ink.pdf`, `invoice.pdf`, `factur-x.xml`). Outputs: `Output/{project}/` (gitignored).
 

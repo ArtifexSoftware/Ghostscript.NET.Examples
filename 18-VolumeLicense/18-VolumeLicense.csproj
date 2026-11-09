@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Ghostscript.NET.Examples.VolumeLicense</RootNamespace>
+    <AssemblyName>18-VolumeLicense</AssemblyName>
+  </PropertyGroup>
+</Project>

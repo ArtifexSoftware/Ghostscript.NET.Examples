@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "16-CustomDllPath", "16-Cust
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17-PdfA3", "17-PdfA3\17-PdfA3.csproj", "{B069F284-0CAE-41F3-BA52-92CF1E0C61F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "18-VolumeLicense", "18-VolumeLicense\18-VolumeLicense.csproj", "{B49590B2-3B16-4A81-8611-073539C44C76}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -267,6 +269,18 @@ Global
 		{B069F284-0CAE-41F3-BA52-92CF1E0C61F2}.Release|x64.Build.0 = Release|Any CPU
 		{B069F284-0CAE-41F3-BA52-92CF1E0C61F2}.Release|x86.ActiveCfg = Release|Any CPU
 		{B069F284-0CAE-41F3-BA52-92CF1E0C61F2}.Release|x86.Build.0 = Release|Any CPU
+		{B49590B2-3B16-4A81-8611-073539C44C76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B49590B2-3B16-4A81-8611-073539C44C76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B49590B2-3B16-4A81-8611-073539C44C76}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B49590B2-3B16-4A81-8611-073539C44C76}.Debug|x64.Build.0 = Debug|Any CPU
+		{B49590B2-3B16-4A81-8611-073539C44C76}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B49590B2-3B16-4A81-8611-073539C44C76}.Debug|x86.Build.0 = Debug|Any CPU
+		{B49590B2-3B16-4A81-8611-073539C44C76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B49590B2-3B16-4A81-8611-073539C44C76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B49590B2-3B16-4A81-8611-073539C44C76}.Release|x64.ActiveCfg = Release|Any CPU
+		{B49590B2-3B16-4A81-8611-073539C44C76}.Release|x64.Build.0 = Release|Any CPU
+		{B49590B2-3B16-4A81-8611-073539C44C76}.Release|x86.ActiveCfg = Release|Any CPU
+		{B49590B2-3B16-4A81-8611-073539C44C76}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

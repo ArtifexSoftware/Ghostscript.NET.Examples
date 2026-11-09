@@ -1,6 +1,6 @@
 <Project>
   <PropertyGroup Label="Artifex package versions">
-    <GhostscriptNetVersion>1.3.6</GhostscriptNetVersion>
-    <GhostscriptNativeAssetsVersion>10.8.0</GhostscriptNativeAssetsVersion>
+    <GhostscriptNetVersion>1.3.7</GhostscriptNetVersion>
+    <GhostscriptNativeAssetsVersion>10.8.1</GhostscriptNativeAssetsVersion>
   </PropertyGroup>
 </Project>
