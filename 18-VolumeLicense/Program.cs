@@ -14,6 +14,8 @@ internal static class Program
     static void VolumeLicense()
     {
         Environment.SetEnvironmentVariable("GHOSTSCRIPT_NET_OFFICE_ACTIVITY_VERBOSE", "1");
+        IgnoreIncompatibleGhostPdlEnv();
+        ConsoleEx.Info("Process: " + (Environment.Is64BitProcess ? "64-bit" : "32-bit"));
 
         if (!GhostscriptVersionInfo.TryGetGhostPdlVersion(out GhostscriptVersionInfo pdl))
         {
@@ -119,6 +121,24 @@ internal static class Program
             keys.Add(("GHOSTSCRIPT_NET_OFFICE_KEY", envKey.Trim()));
 
         return keys;
+    }
+
+    static void IgnoreIncompatibleGhostPdlEnv()
+    {
+        string expected = Environment.Is64BitProcess ? "gpdldll64.dll" : "gpdldll32.dll";
+        foreach (string name in new[] { "GHOSTPDL_DLL", "GPDL_DLL" })
+        {
+            string? path = Environment.GetEnvironmentVariable(name);
+            if (string.IsNullOrWhiteSpace(path) || !File.Exists(path))
+                continue;
+
+            string fileName = Path.GetFileName(path);
+            if (fileName.Equals(expected, StringComparison.OrdinalIgnoreCase))
+                continue;
+
+            ConsoleEx.Info("Ignoring " + name + " (wrong architecture for this process): " + path);
+            Environment.SetEnvironmentVariable(name, null);
+        }
     }
 
     static string? FindKeyFile()

@@ -6,8 +6,8 @@ Each recipe has a matching console project in this solution (NuGet-only; no proj
 Requires a Ghostscript native library (`gsdll64.dll` / `libgs.so`), either from `Ghostscript.NativeAssets` or a system install. Office recipes also need GhostPDL (`gpdldll64.dll` / `libgpdl.so`).
 
 ```xml
-<PackageReference Include="Ghostscript.NET" Version="1.3.7" />
-<PackageReference Include="Ghostscript.NativeAssets" Version="10.8.1" />
+<PackageReference Include="Ghostscript.NET" Version="1.3.8" />
+<PackageReference Include="Ghostscript.NativeAssets" Version="10.8.2" />
 ```
 
 Or the convenience package [Ghostscript.NET.Office](https://www.nuget.org/packages/Ghostscript.NET.Office/) (1.0.0), which depends on both of the above. You still call `GhostscriptOffice.Unlock(key)` for the full document.

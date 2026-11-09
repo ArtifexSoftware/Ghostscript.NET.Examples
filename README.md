@@ -31,7 +31,7 @@ Package versions are pinned in [`Versions.props`](Versions.props). [`NuGet.Confi
 ## Prerequisites
 
 - .NET 8 SDK (Windows or Linux x64)
-- Packages from [nuget.org](https://www.nuget.org/) (see `Versions.props`): `Ghostscript.NET` 1.3.7 and `Ghostscript.NativeAssets` 10.8.1
+- Packages from [nuget.org](https://www.nuget.org/) (see `Versions.props`): `Ghostscript.NET` 1.3.8 and `Ghostscript.NativeAssets` 10.8.2
 - Optional `GHOSTSCRIPT_NET_OFFICE_KEY` for full Office documents (without it, GhostPDL converts the first 3 pages)
 - Optional `Input/office.keys` (gitignored; see `Input/office.keys.example`) for `18-VolumeLicense`
 - Optional `GHOSTSCRIPT_NET_RUN_PRINTER=1` to run `11-Print`
